@@ -9,41 +9,35 @@
 
 import md2html from 'src/components/markdown-it-plugins/markdown-rendering.js'
 
-export const mksAbbrLoad = () => {
-    console.group('mksAbbrLoad')
+// import { glob } from 'node:fs/promises'
+import fs from 'node:fs'
+import path from 'node:path'
 
+export const mksAbbrLoadNodeJS = () => {
+    // console.group('mksAbbrLoadNodeJS')
     let mksAbbrList = {}
-    const items_dir = import.meta.glob(`../../../public/mks/abbr/*.md`, {
-        // query: "?url&raw",
-        query: "?raw",
-        eager: true,
-    })
-    console.log('items_dir', items_dir)
-    // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
-    const path_regex = new RegExp(`../../../public/mks/abbr/(?<item_name>.*).md`)
-    // /src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js
-    // /public/mks/abbr/HTML.md
 
-    // console.log("path_regex", path_regex);
-    for (const path in items_dir) {
-        console.log('path', path)
-        console.log('items_dir[path]', items_dir[path])
-        const { item_name } = path_regex.exec(path).groups
-        console.log(`item_name: '${item_name}'`)
-        mksAbbrList[item_name] = {}
-        mksAbbrList[item_name].name = item_name
-        mksAbbrList[item_name].path_readme = path
-        mksAbbrList[item_name].path_base = `mks/abbr/`
-        mksAbbrList[item_name].content = md2html(items_dir[path].default)
-        // const content = preProcessingMD(
-        //     items_dir[path].default,
-        //     mksAbbrList[item_name].path_base
-        // );
-        // console.log(`mksAbbrList['${item_name}'] content:`, content);
-        // mksAbbrList[item_name].content = content;
-        // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
+    // https://nodejs.org/docs/latest/api/fs.html#fsglobsyncpattern-options
+    // console.log('process.cwd()', process.cwd())
+    // const items_dir = globSync(`../../md_content/abbr/*.md`)
+    const files = fs.globSync(`src/md_content/abbr/*.md`)
+    // console.log('files', files)
+    for (const filePath of files) {
+        // console.log('filePath', filePath)
+        const data = fs.readFileSync(filePath, 'utf8')
+        // console.log('data', data)
+        const item_name = path.basename(filePath, path.extname(filePath))
+        // console.log(`item_name: '${item_name}'`)
+        const abbrDescription = md2html(data)
+        mksAbbrList[item_name] = abbrDescription
+        // mksAbbrList[item_name] = {}
+        // mksAbbrList[item_name].name = item_name
+        // mksAbbrList[item_name].path_readme = filePath
+        // mksAbbrList[item_name].content =
+        // console.log('mksAbbrList[item_name].content', mksAbbrList[item_name].content)
+
     }
-    console.log('mksAbbrList:', mksAbbrList)
+    // console.log('mksAbbrList:', mksAbbrList)
     // console.log("mksAbbrList:", Object.keys(mksAbbrList));
     console.groupEnd()
     return mksAbbrList
@@ -57,11 +51,11 @@ export default function abbr_plugin(md, opts) {
 
     opts = Object.assign({}, opts_defaults, opts)
     // console.log('mksAbbrCollection', mksAbbrCollection)
-    // console.log(opts.abbreviations);
+    // console.log('opts.abbreviations', opts.abbreviations)
     opts.abbreviations = Object.fromEntries(
         Object.entries(opts.abbreviations).map(([key, value]) => [`:${key}`, value]),
     )
-    // console.log(opts.abbreviations);
+    console.log('opts.abbreviations', opts.abbreviations)
 
     const escapeRE = md.utils.escapeRE
     const arrayReplaceAt = md.utils.arrayReplaceAt
@@ -133,7 +127,7 @@ export default function abbr_plugin(md, opts) {
     }
 
     function abbr_replace(state) {
-        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_replace`);
+        console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_replace`);
         const blockTokens = state.tokens
 
         // const mksAbbrTemp = mksAbbrLoad()
@@ -237,9 +231,10 @@ export default function abbr_plugin(md, opts) {
                             abbrDescription: '',
                         }
                     }
-                    token_t.meta.abbrDescription = opts.abbreviations[':' + m[2]]
+                    token_t.meta.abbrDescription = opts.abbreviations[':' + m[2]].toString()
                     token_t.attrJoin('abbrDescription', token_t.meta.abbrDescription)
                     nodes.push(token_t)
+                    // console.log("token_t", token_t);
 
                     // const token_c = new state.Token("abbr_close", "abbr", -1);
                     // nodes.push(token_c);

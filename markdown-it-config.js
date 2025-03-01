@@ -1,12 +1,14 @@
 import MarkdownItPluginCodeAsMDCode from './src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode'
 import MarkdownItPluginAbbrAsMDAbbr from './src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr'
 
-// import { mksAbbrCollection } from "src/content_md/mksAbbr";
+import { mksAbbrLoadNodeJS } from './src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr'
+
+const mksAbbrCollection = mksAbbrLoadNodeJS()
 
 const markdownItSetup = async (md) => {
     md.use(MarkdownItPluginCodeAsMDCode, {})
     md.use(MarkdownItPluginAbbrAsMDAbbr, {
-        // abbreviations: mksAbbrCollection,
+        abbreviations: mksAbbrCollection,
     })
     // md.use(LinkAttributes, {
     //     matcher: (link: string) => /^https?:\/\//.test(link),
