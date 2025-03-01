@@ -6,7 +6,7 @@ import MarkdownItPluginAbbrAsMDAbbr from './src/components/markdown-it-plugins/m
 const markdownItSetup = async (md) => {
     md.use(MarkdownItPluginCodeAsMDCode, {})
     md.use(MarkdownItPluginAbbrAsMDAbbr, {
-    //     // abbreviations: mksAbbrCollection,
+        // abbreviations: mksAbbrCollection,
     })
     // md.use(LinkAttributes, {
     //     matcher: (link: string) => /^https?:\/\//.test(link),
@@ -27,6 +27,8 @@ const markdownItConfig = {
         // before: fn,
         // after: fn,
     },
+    // linkify: true,
+    // typographer: true,
     markdownItSetup: markdownItSetup,
 }
 

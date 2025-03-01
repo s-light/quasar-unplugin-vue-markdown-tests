@@ -3,6 +3,10 @@
 
 import { defineConfig } from '#q-app/wrappers'
 
+// required for the gray-matter plugin.
+// https://github.com/davidmyersdev/vite-plugin-node-polyfills
+import {nodePolyfills} from "vite-plugin-node-polyfills";
+
 import Markdown from 'unplugin-vue-markdown/vite'
 import markdownItConfig from './markdown-it-config'
 
@@ -83,6 +87,7 @@ export default defineConfig((/* ctx */) => {
                 //         md.use(MarkdownItPluginCodeAsMDCode, {})
                 //     },
                 // }),
+                nodePolyfills(),
             ],
         },
 

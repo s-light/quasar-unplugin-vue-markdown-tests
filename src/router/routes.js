@@ -6,6 +6,12 @@ export const childrenCommon = [
         component: () => import('pages/TestAbbrPlugin.vue'),
     },
     {
+        title: 'Test Abbreviations',
+        icon: 'brush',
+        path: 'test-abbr',
+        component: () => import('pages/TestAbbr.vue'),
+    },
+    {
         title: 'home',
         icon: 'precision_manufacturing',
         path: 'md-glob',

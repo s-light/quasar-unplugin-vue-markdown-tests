@@ -7,45 +7,47 @@
 
 // export const mksAbbrCollection = {}
 
-// export const mksAbbrLoad = () => {
-//     console.group('mksAbbrLoad')
+import md2html from 'src/components/markdown-it-plugins/markdown-rendering.js'
 
-//     let mksAbbrList = {}
-//     const items_dir = import.meta.glob(`../../../public/mks/abbr/*.md`, {
-//         // query: "?url&raw",
-//         // query: "?raw",
-//         eager: true,
-//     })
-//     console.log('items_dir', items_dir)
-//     // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
-//     const path_regex = new RegExp(`../../../public/mks/abbr/(?<item_name>.*).md`)
-//     // /src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js
-//     // /public/mks/abbr/HTML.md
+export const mksAbbrLoad = () => {
+    console.group('mksAbbrLoad')
 
-//     // console.log("path_regex", path_regex);
-//     for (const path in items_dir) {
-//         console.log('path', path)
-//         console.log('items_dir[path]', items_dir[path])
-//         const { item_name } = path_regex.exec(path).groups
-//         console.log(`item_name: '${item_name}'`)
-//         mksAbbrList[item_name] = {}
-//         mksAbbrList[item_name].name = item_name
-//         mksAbbrList[item_name].path_readme = path
-//         mksAbbrList[item_name].path_base = `mks/abbr/`
-//         mksAbbrList[item_name].content = items_dir[path].default
-//         // const content = preProcessingMD(
-//         //     items_dir[path].default,
-//         //     mksAbbrList[item_name].path_base
-//         // );
-//         // console.log(`mksAbbrList['${item_name}'] content:`, content);
-//         // mksAbbrList[item_name].content = content;
-//         // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
-//     }
-//     console.log('mksAbbrList:', mksAbbrList)
-//     // console.log("mksAbbrList:", Object.keys(mksAbbrList));
-//     console.groupEnd()
-//     return mksAbbrList
-// }
+    let mksAbbrList = {}
+    const items_dir = import.meta.glob(`../../../public/mks/abbr/*.md`, {
+        // query: "?url&raw",
+        query: "?raw",
+        eager: true,
+    })
+    console.log('items_dir', items_dir)
+    // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
+    const path_regex = new RegExp(`../../../public/mks/abbr/(?<item_name>.*).md`)
+    // /src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js
+    // /public/mks/abbr/HTML.md
+
+    // console.log("path_regex", path_regex);
+    for (const path in items_dir) {
+        console.log('path', path)
+        console.log('items_dir[path]', items_dir[path])
+        const { item_name } = path_regex.exec(path).groups
+        console.log(`item_name: '${item_name}'`)
+        mksAbbrList[item_name] = {}
+        mksAbbrList[item_name].name = item_name
+        mksAbbrList[item_name].path_readme = path
+        mksAbbrList[item_name].path_base = `mks/abbr/`
+        mksAbbrList[item_name].content = md2html(items_dir[path].default)
+        // const content = preProcessingMD(
+        //     items_dir[path].default,
+        //     mksAbbrList[item_name].path_base
+        // );
+        // console.log(`mksAbbrList['${item_name}'] content:`, content);
+        // mksAbbrList[item_name].content = content;
+        // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
+    }
+    console.log('mksAbbrList:', mksAbbrList)
+    // console.log("mksAbbrList:", Object.keys(mksAbbrList));
+    console.groupEnd()
+    return mksAbbrList
+}
 
 export default function abbr_plugin(md, opts) {
     // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_plugin`);
