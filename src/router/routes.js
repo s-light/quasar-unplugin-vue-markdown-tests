@@ -1,10 +1,14 @@
 export const childrenCommon = [
     {
-        // title: 'Welcome',
-        // icon: 'home',
+        title: 'Test Global Components',
+        icon: 'brush',
+        path: '/',
+        component: () => import('pages/TestAbbrPlugin.vue'),
+    },
+    {
         title: 'home',
         icon: 'precision_manufacturing',
-        path: '/',
+        path: 'md-glob',
         component: () => import('pages/MDGlob.vue'),
     },
     {

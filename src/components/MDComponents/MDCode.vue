@@ -1,15 +1,18 @@
 <template>
     <div class="MDCode">
-        <span>'{{ include_path }}'</span>
+        <!-- <span v-if="includePath!='undefined'">'{{ includePath }}'</span> -->
         <!-- TODO: change span to label -->
         <!-- TODO: or make it clickable to point to source on github... -->
         <VCodeBlock
             :code="content"
             highlightjs
-            :label="codeFilePath"
             :lang="codeLanguage"
             :theme="theme"
+            :label="codeFilePath!='undefined' ? codeFilePath : ''"
         ></VCodeBlock>
+        <!--
+            :label="codeFilePath"
+         -->
     </div>
 </template>
 
@@ -17,11 +20,12 @@
 import { ref, watch } from 'vue'
 import { useQuasar } from 'quasar'
 import VCodeBlock from '@wdns/vue-code-block'
+// https://github.com/webdevnerdstuff/vue-code-block
 
 defineProps({
     content: String,
     codeLanguage: String,
-    include_path: String,
+    // includePath: String,
     codeFilePath: String,
 })
 
