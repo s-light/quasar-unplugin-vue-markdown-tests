@@ -5,22 +5,24 @@
             self="bottom middle"
             class="MDAbbrDescription bg-amber text-black shadow-4"
             max-width="40em"
-            ><div>
-                <!-- <mdrender></mdrender> -->
-                <!-- <component :is="{template:abbrDescription}"></component> -->
-                <div v-html="abbrDescription"></div>
-            </div
-        ></q-tooltip>
+            ><slot name="abbrDescription"></slot></q-tooltip>
     </span>
 </template>
 
 <script setup>
+{/* <div>
+                <!-- <mdrender></mdrender> -->
+                <!-- <component :is="{template:abbrDescription}"></component> -->
+                <div v-html="abbrDescription"></div>
+            </div
+        > */}
+
 // import { h } from "vue";
 // import MyMarkdown from "components/MDComponents/MyMarkdown.vue";
 // const props = defineProps({
-defineProps({
-    abbrDescription: String,
-});
+// defineProps({
+//     abbrDescription: String,
+// });
 
 // const mdrender = () => {
 //     return h('div', props.abbrDescription);

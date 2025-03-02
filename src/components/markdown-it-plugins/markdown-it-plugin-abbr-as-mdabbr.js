@@ -55,7 +55,7 @@ export default function abbr_plugin(md, opts) {
     opts.abbreviations = Object.fromEntries(
         Object.entries(opts.abbreviations).map(([key, value]) => [`:${key}`, value]),
     )
-    console.log('opts.abbreviations', opts.abbreviations)
+    // console.log('opts.abbreviations', opts.abbreviations)
 
     const escapeRE = md.utils.escapeRE
     const arrayReplaceAt = md.utils.arrayReplaceAt
@@ -127,14 +127,14 @@ export default function abbr_plugin(md, opts) {
     }
 
     function abbr_replace(state) {
-        console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_replace`);
+        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_replace`);
         const blockTokens = state.tokens
 
         // const mksAbbrTemp = mksAbbrLoad()
         // console.log('mksAbbrTemp', mksAbbrTemp)
         // // console.log("mksAbbrCollection", mksAbbrCollection);
 
-        console.log('opts.abbreviations', opts.abbreviations)
+        // console.log('opts.abbreviations', opts.abbreviations)
         if (!opts.abbreviations) {
             return
         }
@@ -166,7 +166,7 @@ export default function abbr_plugin(md, opts) {
                 .map(escapeRE)
                 .join('|') +
             ')'
-        console.log('abbrList', abbrList)
+        // console.log('abbrList', abbrList)
 
         const regText =
             '(^|' +
@@ -232,7 +232,7 @@ export default function abbr_plugin(md, opts) {
                         }
                     }
                     token_t.meta.abbrDescription = opts.abbreviations[':' + m[2]].toString()
-                    token_t.attrJoin('abbrDescription', token_t.meta.abbrDescription)
+                    // token_t.attrJoin('abbrDescription', token_t.meta.abbrDescription)
                     nodes.push(token_t)
                     // console.log("token_t", token_t);
 
@@ -264,10 +264,15 @@ export default function abbr_plugin(md, opts) {
     md.core.ruler.after('linkify', 'abbr_replace', abbr_replace)
 
     md.renderer.rules.abbr = function (tokens, idx, options, env, slf) {
-        console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr called`)
+        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr called`)
         // the default rendering does escape html... we want it raw!
         const token = tokens[idx]
-        console.log(`token: `, token)
-        return `<${token.tag} ${slf.renderAttrs(token)}>${token.content}</${token.tag}>`
+        // console.log(`token: `, token)
+        const resultHTML = `<${token.tag} ${slf.renderAttrs(token)}>
+        <template #default>${token.content}</template>
+        <template #abbrDescription>${token.meta?.abbrDescription}</template>
+        </${token.tag}>`
+        // console.log(`resultHTML: `, resultHTML)
+        return resultHTML
     }
 }
