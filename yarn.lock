@@ -645,6 +645,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mdit/plugin-alert@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@mdit/plugin-alert@npm:0.16.0"
+  dependencies:
+    "@types/markdown-it": ^14.1.2
+  peerDependencies:
+    markdown-it: ^14.1.0
+  peerDependenciesMeta:
+    markdown-it:
+      optional: true
+  checksum: e6e49019405304e6fbcea81056692c0b91c14664ada4cca61f2d5546b1bbc8f17f2bb4f31ccd04590e6e409c5e938fc647d68d7206ef20bdb562fa4ce766d1c0
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -830,7 +844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.1.4":
+"@rollup/pluginutils@npm:^5.0.1":
   version: 5.1.4
   resolution: "@rollup/pluginutils@npm:5.1.4"
   dependencies:
@@ -3539,7 +3553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.8.0":
+"highlight.js@npm:^11.11.1, highlight.js@npm:^11.8.0":
   version: 11.11.1
   resolution: "highlight.js@npm:11.11.1"
   checksum: 841ddd329a92be123a61ef4051698f824c3575deef588fbb810bd638f1575ddc96b7bdd925b97c05a29276bb119dfcb8e5bcb0acb31c86249371bf046e131d72
@@ -4081,6 +4095,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"link@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "link@npm:2.1.1"
+  bin:
+    link: dist/cli.js
+  checksum: 9fed33fa026584bfb726e0a98a2d630f8b6ebb1d160a5e45a63b1a46c60358b604192d22ea8c4bd4f8cbb62c5badefafafdd9a8e85adfe062fa7e3222c1d8590
+  languageName: node
+  linkType: hard
+
 "linkify-it@npm:^5.0.0":
   version: 5.0.0
   resolution: "linkify-it@npm:5.0.0"
@@ -4167,6 +4190,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"markdown-it-anchor@npm:^9.2.0":
+  version: 9.2.0
+  resolution: "markdown-it-anchor@npm:9.2.0"
+  peerDependencies:
+    "@types/markdown-it": "*"
+    markdown-it: "*"
+  checksum: 63f9ab99332d90fc09f8cede359f4c7f1c8d9765a0cd4d006538a072a9b5c9069e4e962c246ad7bc7a87a3ebb7e655e9f22f60e696ad855bdb51b7bfbae65c33
+  languageName: node
+  linkType: hard
+
 "markdown-it-async@npm:^2.0.0":
   version: 2.0.0
   resolution: "markdown-it-async@npm:2.0.0"
@@ -4174,6 +4207,13 @@ __metadata:
     "@types/markdown-it": ^14.1.2
     markdown-it: ^14.1.0
   checksum: 191ddc79ff62c9dbc5374c3b126756533cd58907ff46d2bcb09570366a890628ac6b9cec6773f2e78da7293308ab639f2b57c02fd12a68731a73effdb4b13e60
+  languageName: node
+  linkType: hard
+
+"markdown-it-emoji@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "markdown-it-emoji@npm:3.0.0"
+  checksum: 421290e310285b9ef979e409ea056623489541013ee7307956a3450a06e0de034c585e217ed43a7bf9a6f16102542cb75799b975a861ba01a2db2b7105e16871
   languageName: node
   linkType: hard
 
@@ -4886,6 +4926,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pathe@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "pathe@npm:2.0.3"
+  checksum: 0602bdd4acb54d91044e0c56f1fb63467ae7d44ab3afea1f797947b0eb2b4d1d91cf0d58d065fdb0a8ab0c4acbbd8d3a5b424983eaf10dd5285d37a16f6e3ee9
+  languageName: node
+  linkType: hard
+
 "pbkdf2@npm:^3.1.2":
   version: 3.1.2
   resolution: "pbkdf2@npm:3.1.2"
@@ -5106,6 +5153,7 @@ __metadata:
   resolution: "quasar-md-components@workspace:."
   dependencies:
     "@eslint/js": ^9.14.0
+    "@mdit/plugin-alert": ^0.16.0
     "@quasar/app-vite": ^2.1.0
     "@quasar/extras": ^1.16.4
     "@vue/eslint-config-prettier": ^10.1.0
@@ -5114,10 +5162,16 @@ __metadata:
     eslint: ^9.14.0
     eslint-plugin-vue: ^9.30.0
     globals: ^15.12.0
+    gray-matter: ^4.0.3
+    highlight.js: ^11.11.1
+    link: ^2.1.1
+    markdown-it-anchor: ^9.2.0
+    markdown-it-async: ^2.0.0
+    markdown-it-emoji: ^3.0.0
     postcss: ^8.4.14
     prettier: ^3.3.3
     quasar: ^2.16.0
-    unplugin-vue-markdown: ^28.3.0
+    unplugin-vue-markdown: ^28.3.1
     vite: ^6.2.0
     vite-plugin-checker: ^0.8.0
     vite-plugin-node-polyfills: ^0.23.0
@@ -6391,25 +6445,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-vue-markdown@npm:^28.3.0":
-  version: 28.3.0
-  resolution: "unplugin-vue-markdown@npm:28.3.0"
+"unplugin-utils@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "unplugin-utils@npm:0.2.4"
+  dependencies:
+    pathe: ^2.0.2
+    picomatch: ^4.0.2
+  checksum: 2016a80dff09b2b8c2b00fcc52adaf5f50eada84432fb7b9cf6bb131eb6aa40e1be6d96400de7a873d24db0c1a598765bc62a760c2b2ae35e79bd185bb92cf17
+  languageName: node
+  linkType: hard
+
+"unplugin-vue-markdown@npm:^28.3.1":
+  version: 28.3.1
+  resolution: "unplugin-vue-markdown@npm:28.3.1"
   dependencies:
     "@mdit-vue/plugin-component": ^2.1.3
     "@mdit-vue/plugin-frontmatter": ^2.1.3
     "@mdit-vue/types": ^2.1.0
-    "@rollup/pluginutils": ^5.1.4
     "@types/markdown-it": ^14.1.2
     markdown-it: ^14.1.0
     markdown-it-async: ^2.0.0
-    unplugin: ^2.1.2
+    unplugin: ^2.2.0
+    unplugin-utils: ^0.2.4
   peerDependencies:
     vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0
-  checksum: 7baf15901f09b82eeaeed780e39c2e05220e6cd49d6c54d632436171a263a723ac4b221002b4d1c60197c5cde8ce5afac8d5910bfd54dfcd661d3e009a5296ba
+  checksum: 4de45fdf55bb27ea3aa66358e982d14728172e04cae9bfeca04f1d7a2ec37658f96e27094ffbbde9b5ab9c4803a263648d24edce1ea408312ab4458935cbe419
   languageName: node
   linkType: hard
 
-"unplugin@npm:^2.1.2":
+"unplugin@npm:^2.2.0":
   version: 2.2.0
   resolution: "unplugin@npm:2.2.0"
   dependencies:
