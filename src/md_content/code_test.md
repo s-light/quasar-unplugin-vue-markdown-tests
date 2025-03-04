@@ -14,6 +14,6 @@ const xyz = 42
 
 the following code block should be filled with a good example.ino code..
 
-```c++ :./example.ino
-//this should be replaced..
+```css :./example.css
+this should be replaced...
 ```
