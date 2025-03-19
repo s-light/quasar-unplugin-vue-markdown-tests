@@ -1,7 +1,7 @@
-// import MarkdownItPluginCodeAsMDCode from "./src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode";
+// import MarkdownItPluginCodeAsMDCode from "src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode";
 
-import MarkdownItPluginAbbrAsMDAbbr from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
-import { mksAbbrLoadNodeJS }        from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
+import MarkdownItPluginAbbrAsMDAbbr from "src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js";
+import { mksAbbrLoadNodeJS }        from "src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js";
 export const mksAbbrCollection = mksAbbrLoadNodeJS();
 
 import { full as mditPluginEmoji } from "markdown-it-emoji";
@@ -13,10 +13,10 @@ import { alert as mdit_alert } from "@mdit/plugin-alert";
 // https://github.com/markdown-it/markdown-it-container
 // import mditPluginContainer from "markdown-it-container";
 
-// import mditPluginImgSrcAbs from "./src/components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
+// import mditPluginImgSrcAbs from "src/components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
 
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
-// import { runEmbedCode } from "./src/components/markdown-it-plugins/markdown-it-plugin-embed-code";
+// import { runEmbedCode } from "src/components/markdown-it-plugins/markdown-it-plugin-embed-code";
 
 
 // const myRenderingInside = (tokens, options, env, md) => {
