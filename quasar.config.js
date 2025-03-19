@@ -30,7 +30,7 @@ import path from "path";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 import Markdown from "unplugin-vue-markdown/vite";
-import markdownItConfig from "./markdown-it-config";
+// import markdownItConfig from "./markdown-it-config";
 
 // export default defineConfig((ctx) => {
 export default defineConfig(() => {
@@ -159,7 +159,8 @@ export default defineConfig(() => {
                     },
                     { server: false },
                 ],
-                Markdown(markdownItConfig),
+                // Markdown(markdownItConfig),
+                Markdown(),
                 // [viteSingleFile()],
                 nodePolyfills(),
             ],
