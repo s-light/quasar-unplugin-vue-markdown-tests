@@ -3,8 +3,8 @@
 // but as i want to handle some things differently we do it manually..
 
 
-import MarkdownIt from "markdown-it-async";
-// import MarkdownIt from "markdown-it";
+// import MarkdownIt from "markdown-it-async";
+import MarkdownIt from "markdown-it";
 
 import matter from "gray-matter";
 
@@ -102,8 +102,8 @@ import { runEmbedCode } from "./markdown-it-plugin-embed-code";
 // so we have to do the rendering steps manually - see below.
 
 
-// import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
-// md.use(mditPluginImgSrcAbs);
+import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
+md.use(mditPluginImgSrcAbs);
 
 // not used because of non interactive rendering...
 import MarkdownItPluginCodeAsMDCode from "./markdown-it-plugin-code-as-mdcode";
@@ -116,7 +116,13 @@ import MarkdownItPluginAbbrAsMDAbbr from './markdown-it-plugin-abbr-as-mdabbr'
 // import mksAbbr from "src/content_md/mksAbbr";
 // eslint-disable-next-line no-unused-vars
 import MDAbbr from "components/MDComponents/MDAbbr.vue";
-md.use(MarkdownItPluginAbbrAsMDAbbr)
+// import mksAbbrLoad from "./markdown-it-plugin-abbr-as-mdabbr.js";
+// const mksAbbrCollection = mksAbbrLoad();
+// console.log("markdown-rendering.js - mksAbbrCollection", mksAbbrCollection);
+// import mksAbbrCollection from "src/../markdown-it-config.js";
+md.use(MarkdownItPluginAbbrAsMDAbbr, {
+    // abbreviations: mksAbbrCollection,
+})
 
 // ------------------------------------------
 // rendering

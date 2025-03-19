@@ -3,38 +3,62 @@
 // https://github.com/camelaissani/markdown-it-include
 // https://github.com/tokusumi/markdown-embed-code
 
+import fs from "node:fs";
+import path from "node:path";
+
 // check with https://regex101.com/
 // c++ :./relative/file/to/your/code.cpp
 // const RE_INFO = /(?<codeLang>.*?)\s?\:(?<codeFilePath>.*)/;
 const RE_INFO = /(?<codeLang>.*?)\s?:(?<codeFilePath>.*)/;
 
 // const embedCode = async (tokens, idx, options, env, self) => {
-const embedCode = async (tokens, idx, options, env) => {
+const embedCode = (tokens, idx, options, env) => {
+    // console.group(`embedCode: idx [${idx}]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
     const token = tokens[idx];
-    console.log(`token: `, token);
+    // console.log(`token in: `, token);
+    if (token.meta == undefined) {
+        token.meta = {};
+    }
+    // console.log(`options: `, options);
+    // console.log(`env: `, env);
     const reResult = RE_INFO.exec(token.info);
-    console.log(`reResult: `, reResult);
+    // console.log(`reResult: `, reResult);
     if (reResult) {
         const { codeLang, codeFilePath } = reResult.groups;
+        token.meta.codeLanguage = codeLang;
+        token.info = codeLang;
+        token.meta.codeFilePath = codeFilePath;
         // console.log(`codeLang: `, codeLang);
         // console.log(`codeFilePath: `, codeFilePath);
         if (codeFilePath) {
             // found code file to include.
             // let us first try to change relative path to absolut:
-            const filePath = codeFilePath.replace("./", env.filePath);
+            const fullPath = env.id;
+            const basePath = path.dirname(fullPath);
+            // console.log("basePath", basePath);
+            const filePath = codeFilePath.replace("./", basePath + path.sep);
+            token.meta.filePath = filePath;
             // console.log(`filePath: `, filePath);
             let codeContent = undefined;
             try {
-                codeContent = await fetch(filePath).then(async (response) => {
-                    console.log(`response: `, response);
-                    if (response.status == 200) {
-                        return await response.text();
-                    } else if (response.status == 404) {
-                        throw new Error(`embed failed: file '${filePath}' not found.`, response);
-                    } else {
-                        throw new Error(`embed failed.`, response);
-                    }
-                });
+                // codeContent = await fetch(filePath).then(async (response) => {
+                //     console.log(`response: `, response);
+                //     if (response.status == 200) {
+                //         return await response.text();
+                //     } else if (response.status == 404) {
+                //         throw new Error(`embed failed: file '${filePath}' not found.`, response);
+                //     } else {
+                //         throw new Error(`embed failed.`, response);
+                //     }
+                // });
+                if (fs.existsSync(filePath)) {
+                    codeContent = fs.readFileSync(filePath, "utf8");
+                    token.meta.fileExists = true;
+                } else {
+                    // throw new Error(`embed failed: file '${filePath}' not found.`);
+                    console.log(`embed failed: file '${filePath}' not found.`);
+                    token.meta.fileExists = false;
+                }
                 // console.log(`codeContent: `, codeContent);
             } catch (error) {
                 console.log(error);
@@ -42,13 +66,14 @@ const embedCode = async (tokens, idx, options, env) => {
             if (codeContent) {
                 // console.log("overwrite token.content.");
                 token.content = codeContent;
-                token.codeLanguage = codeLang;
-                token.codeFilePath = codeFilePath;
-                token.filePath = filePath;
                 // console.log("token", token);
             }
         }
+    } else {
+        token.meta.codeLanguage = token.info;
     }
+    // console.log("token out", token);
+    // console.groupEnd()
 };
 
 /**
@@ -73,12 +98,12 @@ const embedCode = async (tokens, idx, options, env) => {
  * @license MIT
  * @exports runEmbedCode
  */
-export const runEmbedCode = async (tokens, options, env, self) => {
+export const runEmbedCode = (tokens, options, env, self) => {
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
         if (token.type == "fence") {
-            console.log("ping", token);
-            await embedCode(tokens, idx, options, env, self);
+        // if (token.type == "fence" && token.tag == "code") {
+            embedCode(tokens, idx, options, env, self);
         }
     }
 };

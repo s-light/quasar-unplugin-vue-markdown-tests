@@ -5,7 +5,7 @@
             self="bottom middle"
             class="MDAbbrDescription bg-amber text-black shadow-4"
             max-width="40em"
-            ><slot name="abbrDescription"></slot></q-tooltip>
+        ><slot name="abbrDescription"></slot></q-tooltip>
     </span>
 </template>
 

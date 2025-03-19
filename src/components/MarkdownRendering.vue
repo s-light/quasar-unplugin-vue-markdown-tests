@@ -18,7 +18,7 @@ import { shallowRef, ref, watchEffect } from 'vue'
 // import MarkdownIt from "markdown-it";
 import MarkdownIt from 'markdown-it-async'
 
-import MarkdownItPluginCodeAsMDCode from './markdown-it-plugin-code-as-mdcode'
+import MarkdownItPluginCodeAsMDCode from './markdown-it-plugins/markdown-it-plugin-code-as-mdcode'
 
 import source from 'src/md_content/code_test.md?raw'
 // console.log("source", source);
