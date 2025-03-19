@@ -1,7 +1,7 @@
 // import MarkdownItPluginCodeAsMDCode from "./src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode";
 
 import MarkdownItPluginAbbrAsMDAbbr from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
-import { mksAbbrLoadNodeJS } from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
+import { mksAbbrLoadNodeJS }        from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
 export const mksAbbrCollection = mksAbbrLoadNodeJS();
 
 import { full as mditPluginEmoji } from "markdown-it-emoji";
