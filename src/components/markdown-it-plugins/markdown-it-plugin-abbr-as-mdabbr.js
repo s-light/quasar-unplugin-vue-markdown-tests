@@ -21,7 +21,7 @@ export const mksAbbrLoadNodeJS = () => {
     // console.log('process.cwd()', process.cwd())
     // const items_dir = globSync(`../../md_content/abbr/*.md`)
     // const files = fs.globSync(`src/md_content/abbr/*.md`);
-    const files = fs.globSync(`public/mks/abbr/*.md`);
+    const files = fs.globSync(`public/md_content/abbr/*.md`);
     // console.log('files', files)
     for (const filePath of files) {
         // console.log('filePath', filePath)

@@ -144,7 +144,7 @@ export const preProcessingMD = (source) => {
     return processedObj;
 };
 
-export const md2html = async (source, filePath=undefined) => {
+export const md2html = (source, filePath=undefined) => {
     // https://github.com/markdown-it/markdown-it/issues/256#issuecomment-224700130
     // we need to do it manually to be able to do async steps in between..
 

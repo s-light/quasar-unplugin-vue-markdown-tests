@@ -1,13 +1,14 @@
 // import MarkdownItPluginCodeAsMDCode from "./src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode";
-// import MarkdownItPluginAbbrAsMDAbbr from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
-//
-// import { mksAbbrLoadNodeJS } from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
+
+import MarkdownItPluginAbbrAsMDAbbr from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
+import { mksAbbrLoadNodeJS } from "./src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr";
+export const mksAbbrCollection = mksAbbrLoadNodeJS();
 
 import { full as mditPluginEmoji } from "markdown-it-emoji";
 
 // import mditPluginAnchor from "markdown-it-anchor";
 
-// import { alert as mdit_alert } from "@mdit/plugin-alert";
+import { alert as mdit_alert } from "@mdit/plugin-alert";
 
 // https://github.com/markdown-it/markdown-it-container
 // import mditPluginContainer from "markdown-it-container";
@@ -17,7 +18,6 @@ import { full as mditPluginEmoji } from "markdown-it-emoji";
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
 // import { runEmbedCode } from "./src/components/markdown-it-plugins/markdown-it-plugin-embed-code";
 
-// export const mksAbbrCollection = mksAbbrLoadNodeJS();
 
 // const myRenderingInside = (tokens, options, env, md) => {
 // // const myRenderingInside = async (tokens, options, env) => {
@@ -35,9 +35,9 @@ import { full as mditPluginEmoji } from "markdown-it-emoji";
 const markdownItSetup = async (md) => {
     // md.use(MarkdownItPluginCodeAsMDCode, {});
 
-    // md.use(MarkdownItPluginAbbrAsMDAbbr, {
-    //     abbreviations: mksAbbrCollection,
-    // });
+    md.use(MarkdownItPluginAbbrAsMDAbbr, {
+        abbreviations: mksAbbrCollection,
+    });
 
     md.use(mditPluginEmoji);
 
@@ -54,7 +54,7 @@ const markdownItSetup = async (md) => {
 
     // import "@mdit/plugin-alert/style";
     // css loading now in `boot/markdown-load-css.js`
-    // md.use(mdit_alert);
+    md.use(mdit_alert);
 
     // md.use(mditPluginImgSrcAbs);
 
