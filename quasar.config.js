@@ -41,15 +41,10 @@ export default defineConfig(() => {
         // app boot file (/src/boot)
         // --> boot files are part of "main.js"
         // https://v2.quasar.dev/quasar-cli-vite/boot-files
-        boot: [
-            "i18n",
-            "addressbar-color",
-            "register-global-components",
-            "markdown-load-css",
-        ],
+        boot: ['i18n', 'addressbar-color', 'register-global-components', 'markdown-load-css'],
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
-        css: ["app.scss"],
+        css: ['app.scss'],
 
         // https://github.com/quasarframework/quasar/tree/dev/extras
         extras: [
@@ -61,25 +56,25 @@ export default defineConfig(() => {
             // 'line-awesome',
             // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
-            "roboto-font", // optional, you are not bound to it
-            "material-icons", // optional, you are not bound to it
+            'roboto-font', // optional, you are not bound to it
+            'material-icons', // optional, you are not bound to it
         ],
 
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
         build: {
             target: {
-                browser: ["es2019", "edge88", "firefox78", "chrome87", "safari13.1"],
-                node: "node20",
+                browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
+                node: 'node20',
             },
 
-            vueRouterMode: "history", // available values: 'hash', 'history'
+            vueRouterMode: 'history', // available values: 'hash', 'history'
             // vueRouterBase,
             // vueDevtools: true,
             // vueOptionsAPI: false,
 
             // publicPath: '/',
             // publicPath: "/quasar_lightpaint/dist/spa/",
-            publicPath: "mks-welcome",
+            publicPath: 'quasar-unplugin-vue-markdown-tests',
             // analyze: true,
             env: {
                 //https://forum.quasar-framework.org/topic/6853/auto-generate-a-build-number-in-spa/15?_=1653270667151
@@ -129,11 +124,11 @@ export default defineConfig(() => {
                         alias: [
                             {
                                 find: /^vue$/,
-                                replacement: "vue/dist/vue.esm-bundler.js",
+                                replacement: 'vue/dist/vue.esm-bundler.js',
                             },
                         ],
                     },
-                };
+                }
                 // equivalent of following vite.config.js/vite.config.ts:
                 // export default defineConfig({
                 //   build: {
@@ -149,7 +144,7 @@ export default defineConfig(() => {
 
             vitePlugins: [
                 [
-                    "vite-plugin-checker",
+                    'vite-plugin-checker',
                     {
                         eslint: {
                             lintCommand:
@@ -171,8 +166,8 @@ export default defineConfig(() => {
             open: false, // opens browser window automatically
             // https: true, // for automagically self-signed cert.
             https: {
-                key: path.join(__dirname, ".certs/localhost/key.pem"),
-                cert: path.join(__dirname, ".certs/localhost/cert.pem"),
+                key: path.join(__dirname, '.certs/localhost/key.pem'),
+                cert: path.join(__dirname, '.certs/localhost/cert.pem'),
             },
         },
 
@@ -183,14 +178,14 @@ export default defineConfig(() => {
                     // https://quasar.dev/quasar-plugins/notify
                 },
                 // true "auto" false
-                dark: "auto",
+                dark: 'auto',
             },
 
             /**
              * Auto import - which file extensions should be interpreted as referring to Vue SFC?
              * @default [ 'vue' ]
              */
-            autoImportVueExtensions: ["vue", "md"],
+            autoImportVueExtensions: ['vue', 'md'],
 
             /**
              * Auto import - which file extensions should be interpreted as referring to script files?
@@ -218,11 +213,11 @@ export default defineConfig(() => {
 
             // Quasar plugins
             plugins: [
-                "AddressbarColor",
-                "AppFullscreen",
-                "LocalStorage",
-                "SessionStorage",
-                "Notify",
+                'AddressbarColor',
+                'AppFullscreen',
+                'LocalStorage',
+                'SessionStorage',
+                'Notify',
             ],
         },
 
@@ -260,17 +255,17 @@ export default defineConfig(() => {
             // (gets superseded if process.env.PORT is specified at runtime)
 
             middlewares: [
-                "render", // keep this as last one
+                'render', // keep this as last one
             ],
         },
 
         // https://v2.quasar.dev/quasar-cli-vite/developing-pwa/configuring-pwa
         pwa: {
-            workboxMode: "GenerateSW", // | "InjectManifest",
+            workboxMode: 'GenerateSW', // | "InjectManifest",
             injectPwaMetaTags: true,
             // see below for the InjectPwaMetaTagsParams interface
-            swFilename: "sw.js",
-            manifestFilename: "manifest.json",
+            swFilename: 'sw.js',
+            manifestFilename: 'manifest.json',
             useCredentialsForManifestTag: false,
             // Moved to quasar.config > build > useFilenameHashes
             // extendGenerateSWOptions (cfg) {}
@@ -297,7 +292,7 @@ export default defineConfig(() => {
             // specify the debugging port to use for the Electron app when running in development mode
             inspectPort: 5858,
 
-            bundler: "packager", // 'packager' or 'builder'
+            bundler: 'packager', // 'packager' or 'builder'
 
             packager: {
                 // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
@@ -313,16 +308,16 @@ export default defineConfig(() => {
             builder: {
                 // https://www.electron.build/configuration/configuration
 
-                appId: "mks-welcome",
+                appId: 'quasar-unplugin-vue-markdown-tests',
             },
         },
 
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-browser-extensions/configuring-bex
         bex: {
-            contentScripts: ["my-content-script"],
+            contentScripts: ['my-content-script'],
 
             // extendBexScriptsConf (esbuildConf) {}
             // extendBexManifestJson (json) {}
         },
-    };
+    }
 });
