@@ -1,7 +1,7 @@
 import { defineBoot } from '#q-app/wrappers'
 
-import MDCode from 'src/components/MDComponents/MDCode.vue'
-import MDAbbr from 'src/components/MDComponents/MDAbbr.vue'
+import MDCode from '/src/components/MDComponents/MDCode.vue'
+import MDAbbr from '/src/components/MDComponents/MDAbbr.vue'
 
 // "async" is optional;
 // more info on params: https://v2.quasar.dev/quasar-cli-vite/boot-files

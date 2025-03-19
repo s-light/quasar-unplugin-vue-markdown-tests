@@ -16,6 +16,6 @@
 </template>
 
 <script setup>
-import MDComponentRendering from 'src/components/MDComponentRendering.vue'
-import MarkdownRendering from 'src/components/MarkdownRendering.vue'
+import MDComponentRendering from '/src/components/MDComponentRendering.vue'
+import MarkdownRendering from '/src/components/MarkdownRendering.vue'
 </script>

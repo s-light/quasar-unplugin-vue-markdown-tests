@@ -10,7 +10,7 @@
 import { toRaw } from 'vue'
 import { shallowRef, ref, watchEffect } from 'vue'
 
-// import MDCode from 'src/components/MDCode.vue'
+// import MDCode from '/src/components/MDCode.vue'
 
 // import VueMarkdown from "vue-markdown-render";
 // this component is based on
@@ -20,7 +20,7 @@ import MarkdownIt from 'markdown-it-async'
 
 import MarkdownItPluginCodeAsMDCode from './markdown-it-plugins/markdown-it-plugin-code-as-mdcode'
 
-import source from 'src/md_content/code_test.md?raw'
+import source from '/src/md_content/code_test.md?raw'
 // console.log("source", source);
 
 // ------------------------------------------

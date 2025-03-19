@@ -8,10 +8,10 @@
 </template>
 
 <script setup>
-import md_raw from 'src/md_content/abbr/UART.md?raw'
+import md_raw from '/src/md_content/abbr/UART.md?raw'
 console.log('md_raw', md_raw)
 
-import md2html from 'src/components/markdown-it-plugins/markdown-rendering.js'
+import md2html from '/src/components/markdown-it-plugins/markdown-rendering.js'
 const md_html = md2html(md_raw)
 
 console.log('md_html', md_html)
