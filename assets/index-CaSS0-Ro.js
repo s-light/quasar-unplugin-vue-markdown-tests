@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/TestAbbrPlugin-B8DzjyIs.js","assets/abbr_test-u0YaqT4X.js","assets/TestAbbrPlugin-BuaLqSei.css","assets/TestAbbr-BjWU2wdx.js","assets/index-B0QwVmVv.js","assets/css-dDMgxRl5.js","assets/index-CfOhYXNc.js","assets/TestAbbr-Dklzhmwq.css","assets/MDGlob-B6pzjw_y.js","assets/code_test-Cc6Yjrnx.js","assets/QTooltip-BZ0wz_nu.js","assets/scroll-DpMCZdWh.js","assets/QPage-31gACgmy.js","assets/MDSimple-zOgc693m.js","assets/MarkdownRendering-D6_dRAZ5.js","assets/MDPluginTest-ByrbkM68.js","assets/TestGlobalComponents-bA-ewBCg.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/MainLayout-CqxvxqXi.js","assets/MainLayout-CBTd-ps5.css","assets/register-global-components-BuVcUdXM.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/TestAbbrPlugin-DpAWgti-.js","assets/abbr_test-Bkc-Zn0G.js","assets/TestAbbrPlugin-BuaLqSei.css","assets/TestAbbr-Dy7pO3zz.js","assets/index-B0QwVmVv.js","assets/css-dDMgxRl5.js","assets/index-CfOhYXNc.js","assets/TestAbbr-Dklzhmwq.css","assets/MDGlob-CTLLsClP.js","assets/code_test-Bad5L-7p.js","assets/QTooltip-epJYRAuy.js","assets/scroll-BwzEjsZh.js","assets/QPage-Cz1mJO3h.js","assets/MDSimple-ChMsjnMS.js","assets/MarkdownRendering-DGdSv0Ge.js","assets/MDPluginTest-BxCFFrYM.js","assets/TestGlobalComponents-BSvm28py.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/MainLayout-DFZ3Kyg2.js","assets/MainLayout-CBTd-ps5.css","assets/register-global-components-DjjdVX9T.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -18720,43 +18720,43 @@ const childrenCommon = [
     title: "Test Global Components",
     icon: "brush",
     path: "/",
-    component: () => __vitePreload(() => import("./TestAbbrPlugin-B8DzjyIs.js"), true ? __vite__mapDeps([0,1,2]) : void 0)
+    component: () => __vitePreload(() => import("./TestAbbrPlugin-DpAWgti-.js"), true ? __vite__mapDeps([0,1,2]) : void 0)
   },
   {
     title: "Test Abbreviations",
     icon: "brush",
     path: "test-abbr",
-    component: () => __vitePreload(() => import("./TestAbbr-BjWU2wdx.js"), true ? __vite__mapDeps([3,4,5,6,7]) : void 0)
+    component: () => __vitePreload(() => import("./TestAbbr-Dy7pO3zz.js"), true ? __vite__mapDeps([3,4,5,6,7]) : void 0)
   },
   {
     title: "home",
     icon: "precision_manufacturing",
     path: "md-glob",
-    component: () => __vitePreload(() => import("./MDGlob-B6pzjw_y.js"), true ? __vite__mapDeps([8,1,9,10,11,12]) : void 0)
+    component: () => __vitePreload(() => import("./MDGlob-CTLLsClP.js"), true ? __vite__mapDeps([8,1,9,10,11,12]) : void 0)
   },
   {
     title: "MD-Simple",
     icon: "brush",
     path: "md-simple",
-    component: () => __vitePreload(() => import("./MDSimple-zOgc693m.js"), true ? __vite__mapDeps([13,12,14,4]) : void 0)
+    component: () => __vitePreload(() => import("./MDSimple-ChMsjnMS.js"), true ? __vite__mapDeps([13,12,14,4]) : void 0)
   },
   {
     title: "MD-PluginTest",
     icon: "brush",
     path: "md-plugintest",
-    component: () => __vitePreload(() => import("./MDPluginTest-ByrbkM68.js"), true ? __vite__mapDeps([15,12,9,14,4]) : void 0)
+    component: () => __vitePreload(() => import("./MDPluginTest-BxCFFrYM.js"), true ? __vite__mapDeps([15,12,9,14,4]) : void 0)
   },
   {
     title: "Test Global Components",
     icon: "brush",
     path: "test-components",
-    component: () => __vitePreload(() => import("./TestGlobalComponents-bA-ewBCg.js"), true ? __vite__mapDeps([16,12,17]) : void 0)
+    component: () => __vitePreload(() => import("./TestGlobalComponents-BSvm28py.js"), true ? __vite__mapDeps([16,12,17]) : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-CqxvxqXi.js"), true ? __vite__mapDeps([18,11,17,19]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-DFZ3Kyg2.js"), true ? __vite__mapDeps([18,11,17,19]) : void 0),
     children: [
       // { path: '', component: () => import('pages/Index.vue') },
       // { path: 'about', component: () => import('pages/About.vue') }
@@ -18770,7 +18770,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-p3cCRAKo.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-CB6F3tqw.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -20594,9 +20594,9 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-OOuslaXv.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-CoOjZOcA.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-BuVcUdXM.js"), true ? __vite__mapDeps([20,5,10,11,17,21]) : void 0),
+    __vitePreload(() => import("./i18n-D_CqoE8F.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-Bi9DEKXG.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-DjjdVX9T.js"), true ? __vite__mapDeps([20,5,10,11,17,21]) : void 0),
     __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([22]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");

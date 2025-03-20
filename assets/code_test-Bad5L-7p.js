@@ -1,4 +1,4 @@
-import { K as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode } from "./index-MP0GapPT.js";
+import { K as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode } from "./index-CaSS0-Ro.js";
 const _hoisted_1 = { class: "markdown-body" };
 const title = "Testing Code-Blocks";
 const tags = ["sw", "code", "style"];
@@ -26,7 +26,7 @@ const _sfc_main = {
         }),
         _cache[2] || (_cache[2] = createBaseVNode("p", null, "the following code block should be filled with a good example.ino code…", -1)),
         createVNode(_component_MDCode, {
-          content: "html {\n    color: orange;\n    background-color: hsl(219, 100%, 18%);\n}",
+          content: "html {\n    color: orange;\n    background-color: hsl(219, 100%, 18%);\n    box-shadow: 0 0 10px black;\n}\n",
           codeLanguage: "css",
           includePath: "",
           codeFilePath: "./example.css",

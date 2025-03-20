@@ -1,7 +1,7 @@
 var __defProp = Object.defineProperty;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-import { s as shallowRef, r as ref, a6 as watchEffect, p as createElementBlock, v as openBlock, l as createBaseVNode, a7 as toRaw } from "./index-MP0GapPT.js";
+import { s as shallowRef, r as ref, a6 as watchEffect, p as createElementBlock, v as openBlock, l as createBaseVNode, a7 as toRaw } from "./index-CaSS0-Ro.js";
 import { M as MarkdownIt } from "./index-B0QwVmVv.js";
 const placeholder = (id, code) => `<pre><!--::markdown-it-async::${id}::--><code>${code}</code></pre>`;
 const placeholderRe = /<pre><!--::markdown-it-async::(\w+)::--><code>[\s\S]*?<\/code><\/pre>/g;
