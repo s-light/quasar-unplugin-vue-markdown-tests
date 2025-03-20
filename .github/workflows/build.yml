@@ -32,8 +32,12 @@ jobs:
             - name: Install 🔧
               run: yarn install --immutable
 
+            # - name: Build 🔧
+            #   run: yarn
+
             - name: Build 🔧
-              run: yarn build
+              run: quasar build
+            #   run: yarn build
 
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@v4
