@@ -17,19 +17,6 @@ import mditPluginImgSrcAbs from './src/components/markdown-it-plugins/markdown-i
 
 import { mditPluginEmbedCodeNodejs } from './src/components/markdown-it-plugins/markdown-it-plugin-embed-code-nodejs.js'
 
-// const myRenderingInside = (tokens, options, env, md) => {
-// // const myRenderingInside = async (tokens, options, env) => {
-//     // console.group("myRenderingInside");
-//     // console.log("tokens", tokens);
-//     // console.log("options", options);
-//     // console.log("env", env);
-//     // console.log("md", md);
-//     runEmbedCode(tokens, options, env, md);
-//     // if we use async functions here we need to make sure we are waiting for all of theme..
-//     // in the runEmbedCode case it leaded to mixed results...
-//     // console.groupEnd();
-// };
-
 const markdownItSetup = async (md) => {
     md.use(MarkdownItPluginCodeAsMDCode, {})
 
@@ -103,7 +90,6 @@ const markdownItConfig = {
     },
     transforms: {
         // before: fn,
-        // renderingInside: myRenderingInside,
         // after: fn,
     },
     markdownItSetup: markdownItSetup,
