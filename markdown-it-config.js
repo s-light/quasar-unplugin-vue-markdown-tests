@@ -15,8 +15,7 @@ import { alert as mdit_alert } from '@mdit/plugin-alert'
 
 import mditPluginImgSrcAbs from './src/components/markdown-it-plugins/markdown-it-plugin-img-src-abs'
 
-// import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
-import { pluginEmbedCode } from './src/components/markdown-it-plugins/markdown-it-plugin-embed-code-nodejs.js'
+import { mditPluginEmbedCodeNodejs } from './src/components/markdown-it-plugins/markdown-it-plugin-embed-code-nodejs.js'
 
 // const myRenderingInside = (tokens, options, env, md) => {
 // // const myRenderingInside = async (tokens, options, env) => {
@@ -40,7 +39,7 @@ const markdownItSetup = async (md) => {
 
     md.use(mditPluginEmoji)
 
-    md.use(pluginEmbedCode)
+    md.use(mditPluginEmbedCodeNodejs)
 
     // https://github.com/valeriangalliat/markdown-it-anchor/tree/master
     md.use(mditPluginAnchor, {
