@@ -13,7 +13,8 @@
         "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
         "test": "echo \"No test specified\" && exit 0",
         "dev": "quasar dev",
-        "build": "echo $PWD && ls -lah && quasar build",
+        "build": "quasar build",
+        "buildwithdebuginfo": "echo $PWD && ls -lah && quasar build",
         "#postinstall": "quasar prepare"
     },
     "dependencies_currentlyUnused": {
