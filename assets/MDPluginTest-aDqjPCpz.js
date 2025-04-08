@@ -1,7 +1,7 @@
-import { Q as QPage } from "./QPage-Cz1mJO3h.js";
-import { H as createBlock, v as openBlock, n as unref, J as withCtx, l as createBaseVNode, j as createVNode } from "./index-CaSS0-Ro.js";
-import { m as md_obj, _ as _sfc_main$2 } from "./code_test-Bad5L-7p.js";
-import { _ as _sfc_main$3 } from "./MarkdownRendering-DGdSv0Ge.js";
+import { Q as QPage } from "./QPage-C2TFiyWB.js";
+import { p as createElementBlock, v as openBlock, D as createTextVNode, j as createVNode, n as unref, F as Fragment, H as createBlock, J as withCtx, l as createBaseVNode } from "./index-BsK2UUXV.js";
+import { m as md_obj, _ as _sfc_main$2 } from "./code_test-N4E3I8Q7.js";
+import { _ as _sfc_main$3 } from "./MarkdownRendering-BC0W3yI2.js";
 import "./index-B0QwVmVv.js";
 const _sfc_main$1 = {
   __name: "MDComponentRendering",
@@ -9,7 +9,10 @@ const _sfc_main$1 = {
     const MDContent = _sfc_main$2;
     console.log("md_obj", md_obj);
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(unref(MDContent));
+      return openBlock(), createElementBlock(Fragment, null, [
+        _cache[0] || (_cache[0] = createTextVNode(" (MDComponentRendering.vue) ")),
+        createVNode(unref(MDContent))
+      ], 64);
     };
   }
 };

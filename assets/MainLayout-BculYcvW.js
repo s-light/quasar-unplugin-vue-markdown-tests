@@ -1,5 +1,5 @@
-import { V as createComponent, c as computed, h, a3 as hSlot, ab as useRouterLinkProps, a as getCurrentInstance, ac as useRouterLink, r as ref, Q as isKeyCode, a4 as stopAndPrevent, ad as hUniqueSlot, R as onBeforeUnmount, ae as History, a1 as client, U as listenOpts, af as getEventPath, ag as createDirective, S as cleanEvt, ah as preventDraggable, ai as noop, O as addEvt, aj as position, N as prevent, ak as stop, al as leftClick, b as inject, a8 as emptyRenderFn, a9 as layoutKey, w as watch, P as nextTick, o as onMounted, am as withDirectives, an as hDir, ao as provide, aa as pageContainerKey, ap as isRuntimeSsrPreHydration, aq as reactive, f as onUnmounted, ar as hMergeSlot, p as createElementBlock, v as openBlock, L as renderList, F as Fragment, as as childrenCommon, H as createBlock, J as withCtx, j as createVNode, at as QIcon, D as createTextVNode, E as toDisplayString, I as useQuasar, K as resolveComponent, au as QBtn, n as unref } from "./index-CaSS0-Ro.js";
-import { f as getHorizontalScrollPosition, h as getVerticalScrollPosition, i as hasScrollbar, c as clearSelection, u as useModelToggleEmits, a as useModelToggleProps, b as useTimeout, d as useModelToggle, s as scrollTargetProp, e as getScrollTarget, g as getScrollbarWidth } from "./scroll-BwzEjsZh.js";
+import { V as createComponent, c as computed, h, a3 as hSlot, ab as useRouterLinkProps, a as getCurrentInstance, ac as useRouterLink, r as ref, Q as isKeyCode, a4 as stopAndPrevent, ad as hUniqueSlot, R as onBeforeUnmount, ae as History, a1 as client, U as listenOpts, af as getEventPath, ag as createDirective, S as cleanEvt, ah as preventDraggable, ai as noop, O as addEvt, aj as position, N as prevent, ak as stop, al as leftClick, b as inject, a8 as emptyRenderFn, a9 as layoutKey, w as watch, P as nextTick, o as onMounted, am as withDirectives, an as hDir, ao as provide, aa as pageContainerKey, ap as isRuntimeSsrPreHydration, aq as reactive, f as onUnmounted, ar as hMergeSlot, p as createElementBlock, v as openBlock, L as renderList, F as Fragment, as as childrenCommon, H as createBlock, J as withCtx, j as createVNode, at as QIcon, D as createTextVNode, E as toDisplayString, I as useQuasar, K as resolveComponent, au as QBtn, n as unref } from "./index-BsK2UUXV.js";
+import { f as getHorizontalScrollPosition, h as getVerticalScrollPosition, i as hasScrollbar, c as clearSelection, u as useModelToggleEmits, a as useModelToggleProps, b as useTimeout, d as useModelToggle, s as scrollTargetProp, e as getScrollTarget, g as getScrollbarWidth } from "./scroll-C5P_9WCT.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
 const QItemSection = createComponent({
   name: "QItemSection",
@@ -1639,7 +1639,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign({
 }, {
   __name: "MainLayout",
   setup(__props) {
-    const leftDrawerOpen = ref(false);
+    const leftDrawerOpen = ref(true);
     function toggleLeftDrawer() {
       leftDrawerOpen.value = !leftDrawerOpen.value;
     }
@@ -1669,9 +1669,7 @@ const _sfc_main = /* @__PURE__ */ Object.assign({
           createVNode(QDrawer, {
             modelValue: leftDrawerOpen.value,
             "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => leftDrawerOpen.value = $event),
-            bordered: "",
-            elevated: "",
-            persistent: ""
+            bordered: ""
           }, {
             default: withCtx(() => [
               createVNode(QList, { class: "q-pt-xl q-pb-xl" }, {
