@@ -1,5 +1,8 @@
 <template>
     <div class="my-markdown-wrapper">
+
+        (MarkdownRendering.vue)
+
         <!-- <mdrender></mdrender> -->
         <div class="my-markdown" v-html="contentHTML"></div>
     </div>

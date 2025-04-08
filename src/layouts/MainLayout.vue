@@ -21,7 +21,7 @@
       style="z-index: 10000"
     />
 
-    <q-drawer v-model="leftDrawerOpen" bordered elevated persistent>
+    <q-drawer v-model="leftDrawerOpen" bordered>
       <q-list class="q-pt-xl q-pb-xl">
         <EssentialNavigation />
 
@@ -60,7 +60,7 @@ defineOptions({
   name: 'MainLayout',
 })
 
-const leftDrawerOpen = ref(false)
+const leftDrawerOpen = ref(true)
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value

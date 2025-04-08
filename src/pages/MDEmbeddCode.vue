@@ -1,6 +1,6 @@
 <template>
     <q-page>
-        ping
+        (MDEmbeddCode.vue)
         <mdcontent></mdcontent>
     </q-page>
 </template>

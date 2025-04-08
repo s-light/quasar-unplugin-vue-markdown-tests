@@ -1,4 +1,5 @@
 <template>
+    (MDComponentRendering.vue)
     <MDContent></MDContent>
 </template>
 

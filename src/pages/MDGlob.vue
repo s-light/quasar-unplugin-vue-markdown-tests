@@ -1,7 +1,12 @@
 <template>
     <q-page>
-        ping
-        <component v-for="(item, index) in mdcontent" :key="index" :is="item.default"></component>
+        here are all *.md files rendered one after each other:
+        <hr />
+        <div v-for="(item, index) in mdcontent" :key="index">
+            <label for="">{{ index }}</label>
+            <component :is="item.default"></component>
+            <hr />
+        </div>
     </q-page>
 </template>
 
