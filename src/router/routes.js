@@ -1,21 +1,21 @@
 export const childrenCommon = [
     {
-        title: 'Test Global Components',
-        icon: 'brush',
+        title: 'home',
+        icon: 'precision_manufacturing',
         path: '/',
+        component: () => import('pages/MDGlob.vue'),
+    },
+    {
+        title: 'Test Abbreviations Plugin',
+        icon: 'brush',
+        path: '/test-abbr-plugin',
         component: () => import('pages/TestAbbrPlugin.vue'),
     },
     {
-        title: 'Test Abbreviations',
+        title: 'Test Abbreviations Style',
         icon: 'brush',
-        path: 'test-abbr',
-        component: () => import('pages/TestAbbr.vue'),
-    },
-    {
-        title: 'home',
-        icon: 'precision_manufacturing',
-        path: 'md-glob',
-        component: () => import('pages/MDGlob.vue'),
+        path: 'test-abbr-style',
+        component: () => import('pages/TestAbbrStyle.vue'),
     },
     {
         title: 'MD-Simple',

@@ -1,6 +1,6 @@
 <template>
     <q-page class="">
-        <h2>MarkdownRendering</h2>
+        <h2>MDSimple.vue - import MarkdownRendering.vue</h2>
         <MarkdownRendering></MarkdownRendering>
     </q-page>
 </template>

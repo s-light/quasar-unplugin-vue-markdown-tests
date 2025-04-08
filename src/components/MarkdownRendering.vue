@@ -1,8 +1,11 @@
 <template>
     <div class="my-markdown-wrapper">
 
-        (MarkdownRendering.vue)
+        MarkdownRendering.vue <br>
+        a raw do it fully manual rendering pipeline-demo. <br>
+        only very minimalistic plugins loaded..
 
+        <hr>
         <!-- <mdrender></mdrender> -->
         <div class="my-markdown" v-html="contentHTML"></div>
     </div>
