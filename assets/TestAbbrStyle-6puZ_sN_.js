@@ -1,4 +1,4 @@
-import { K as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode, J as withCtx, D as createTextVNode, n as unref, F as Fragment } from "./index-BsK2UUXV.js";
+import { a4 as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode, J as withCtx, D as createTextVNode, n as unref, F as Fragment } from "./index-DIMEVx97.js";
 import { M as MarkdownIt } from "./index-B0QwVmVv.js";
 import { b as getAugmentedNamespace, g as getDefaultExportFromCjs, c as cpp, a as css } from "./css-dDMgxRl5.js";
 import { H as HighlightJS } from "./index-CfOhYXNc.js";
@@ -5297,8 +5297,9 @@ const md2html = (source, filePath = void 0) => {
   let tokens = md.parse(processedObj.content, env);
   return md.renderer.render(tokens, md.options, env);
 };
+const _hoisted_1 = ["innerHTML"];
 const _sfc_main = {
-  __name: "TestAbbr",
+  __name: "TestAbbrStyle",
   setup(__props) {
     console.log("md_raw", md_raw);
     const md_html = md2html(md_raw);
@@ -5306,27 +5307,36 @@ const _sfc_main = {
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       return openBlock(), createElementBlock(Fragment, null, [
-        _cache[3] || (_cache[3] = createBaseVNode("h2", null, "testing Abbreviations", -1)),
-        createVNode(_component_MDAbbr, { abbrDescription: "Hello World" }, {
+        _cache[5] || (_cache[5] = createBaseVNode("h2", null, "testing Abbreviations Style (MDAbbr)", -1)),
+        createVNode(_component_MDAbbr, null, {
           default: withCtx(() => _cache[0] || (_cache[0] = [
             createTextVNode("HW")
           ])),
+          abbrDescription: withCtx(() => _cache[1] || (_cache[1] = [
+            createTextVNode('"Hello World"')
+          ])),
           _: 1
         }),
-        _cache[4] || (_cache[4] = createBaseVNode("br", null, null, -1)),
-        createVNode(_component_MDAbbr, { abbrDescription: "sky with bright sunshine" }, {
-          default: withCtx(() => _cache[1] || (_cache[1] = [
+        _cache[6] || (_cache[6] = createBaseVNode("br", null, null, -1)),
+        createVNode(_component_MDAbbr, null, {
+          default: withCtx(() => _cache[2] || (_cache[2] = [
             createTextVNode("sb")
           ])),
-          _: 1
-        }),
-        _cache[5] || (_cache[5] = createBaseVNode("br", null, null, -1)),
-        createVNode(_component_MDAbbr, { abbrDescription: unref(md_html) }, {
-          default: withCtx(() => _cache[2] || (_cache[2] = [
-            createTextVNode("UART")
+          abbrDescription: withCtx(() => _cache[3] || (_cache[3] = [
+            createTextVNode("sky with bright sunshine")
           ])),
           _: 1
-        }, 8, ["abbrDescription"])
+        }),
+        _cache[7] || (_cache[7] = createBaseVNode("br", null, null, -1)),
+        createVNode(_component_MDAbbr, null, {
+          default: withCtx(() => _cache[4] || (_cache[4] = [
+            createTextVNode("sb")
+          ])),
+          abbrDescription: withCtx(() => [
+            createBaseVNode("div", { innerHTML: unref(md_html) }, null, 8, _hoisted_1)
+          ]),
+          _: 1
+        })
       ], 64);
     };
   }

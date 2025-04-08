@@ -1,7 +1,8 @@
 var __defProp = Object.defineProperty;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-import { s as shallowRef, r as ref, a6 as watchEffect, p as createElementBlock, v as openBlock, D as createTextVNode, l as createBaseVNode, a7 as toRaw } from "./index-BsK2UUXV.js";
+import { Q as QPage } from "./QPage-CI0LLcUj.js";
+import { s as shallowRef, r as ref, a6 as watchEffect, p as createElementBlock, v as openBlock, D as createTextVNode, l as createBaseVNode, a7 as toRaw, H as createBlock, J as withCtx, j as createVNode } from "./index-DIMEVx97.js";
 import { M as MarkdownIt } from "./index-B0QwVmVv.js";
 const placeholder = (id, code) => `<pre><!--::markdown-it-async::${id}::--><code>${code}</code></pre>`;
 const placeholderRe = /<pre><!--::markdown-it-async::(\w+)::--><code>[\s\S]*?<\/code><\/pre>/g;
@@ -112,7 +113,7 @@ function MarkdownItPluginCodeAsMDCode(md) {
 const source = "---\ntitle: Testing Code-Blocks\ntags: [sw, code, style]\nid: 127\n---\n\n# Code Test\n\nsome default..\n\n```js\nconst xyz = 42\n```\n\nthe following code block should be filled with a good example.ino code..\n\n```css :./example.css\nthis should be replaced...\n```\n\nthe end.\n";
 const _hoisted_1 = { class: "my-markdown-wrapper" };
 const _hoisted_2 = ["innerHTML"];
-const _sfc_main = {
+const _sfc_main$1 = {
   __name: "MarkdownRendering",
   setup(__props) {
     const md_options = {
@@ -130,7 +131,12 @@ const _sfc_main = {
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1, [
-        _cache[0] || (_cache[0] = createTextVNode(" (MarkdownRendering.vue) ")),
+        _cache[0] || (_cache[0] = createTextVNode(" MarkdownRendering.vue ")),
+        _cache[1] || (_cache[1] = createBaseVNode("br", null, null, -1)),
+        _cache[2] || (_cache[2] = createTextVNode(" a raw do it fully manual rendering pipeline-demo. ")),
+        _cache[3] || (_cache[3] = createBaseVNode("br", null, null, -1)),
+        _cache[4] || (_cache[4] = createTextVNode(" only very minimalistic plugins loaded.. ")),
+        _cache[5] || (_cache[5] = createBaseVNode("hr", null, null, -1)),
         createBaseVNode("div", {
           class: "my-markdown",
           innerHTML: contentHTML.value
@@ -139,6 +145,20 @@ const _sfc_main = {
     };
   }
 };
+const _sfc_main = {
+  __name: "MDSimple",
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(QPage, { class: "" }, {
+        default: withCtx(() => [
+          _cache[0] || (_cache[0] = createBaseVNode("h2", null, "MDSimple.vue - import MarkdownRendering.vue", -1)),
+          createVNode(_sfc_main$1)
+        ]),
+        _: 1
+      });
+    };
+  }
+};
 export {
-  _sfc_main as _
+  _sfc_main as default
 };

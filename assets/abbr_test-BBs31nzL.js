@@ -1,4 +1,4 @@
-import { K as resolveComponent, p as createElementBlock, v as openBlock, a5 as createStaticVNode, l as createBaseVNode, D as createTextVNode, j as createVNode, J as withCtx } from "./index-BsK2UUXV.js";
+import { a4 as resolveComponent, p as createElementBlock, v as openBlock, a5 as createStaticVNode, l as createBaseVNode, D as createTextVNode, j as createVNode, J as withCtx } from "./index-DIMEVx97.js";
 const _hoisted_1 = { class: "markdown-body" };
 const title = "Testing Abbreviations";
 const tags = ["rendering", "abbr", "style"];
@@ -80,7 +80,7 @@ const _sfc_main = {
     };
   }
 };
-const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const md_obj = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main,
   excerpt,
@@ -89,6 +89,6 @@ const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   title
 }, Symbol.toStringTag, { value: "Module" }));
 export {
-  __vite_glob_0_0 as _,
-  _sfc_main as a
+  _sfc_main as _,
+  md_obj as m
 };

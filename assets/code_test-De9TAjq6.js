@@ -1,4 +1,4 @@
-import { K as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode } from "./index-BsK2UUXV.js";
+import { a4 as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode } from "./index-DIMEVx97.js";
 const _hoisted_1 = { class: "markdown-body" };
 const title = "Testing Code-Blocks";
 const tags = ["sw", "code", "style"];

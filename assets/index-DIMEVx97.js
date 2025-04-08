@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/TestAbbrPlugin-DC9GnYDk.js","assets/abbr_test-B-vItanL.js","assets/TestAbbrPlugin-BuaLqSei.css","assets/TestAbbr-Etl4ixf4.js","assets/index-B0QwVmVv.js","assets/css-dDMgxRl5.js","assets/index-CfOhYXNc.js","assets/TestAbbr-Dklzhmwq.css","assets/MDGlob-Qv-ijo79.js","assets/code_test-N4E3I8Q7.js","assets/QTooltip-CWf91E-Q.js","assets/scroll-C5P_9WCT.js","assets/QPage-C2TFiyWB.js","assets/MDSimple-BXC8fh4C.js","assets/MarkdownRendering-BC0W3yI2.js","assets/MDPluginTest-aDqjPCpz.js","assets/TestGlobalComponents-BMwwh-Qg.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/MainLayout-BculYcvW.js","assets/MainLayout-CBTd-ps5.css","assets/register-global-components-Bo2y04X1.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MDGlob-Cn0iacrj.js","assets/abbr_test-BBs31nzL.js","assets/code_test-De9TAjq6.js","assets/QTooltip-DzykyEsx.js","assets/scroll-HVkcWP7y.js","assets/QPage-CI0LLcUj.js","assets/TestAbbrPlugin-Di_EYxvd.js","assets/TestAbbrPlugin-BuaLqSei.css","assets/TestAbbrStyle-6puZ_sN_.js","assets/index-B0QwVmVv.js","assets/css-dDMgxRl5.js","assets/index-CfOhYXNc.js","assets/TestAbbrStyle-Dklzhmwq.css","assets/MDSimple-Dlb2wqgy.js","assets/MDPluginTest-BJi9DFev.js","assets/TestGlobalComponents-SCae3y1S.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/MainLayout-qdx_q73Q.js","assets/MainLayout-CBTd-ps5.css","assets/register-global-components-CftBOR_-.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -18717,46 +18717,46 @@ function extractChangingRecords(to, from) {
 }
 const childrenCommon = [
   {
-    title: "Test Global Components",
-    icon: "brush",
-    path: "/",
-    component: () => __vitePreload(() => import("./TestAbbrPlugin-DC9GnYDk.js"), true ? __vite__mapDeps([0,1,2]) : void 0)
-  },
-  {
-    title: "Test Abbreviations",
-    icon: "brush",
-    path: "test-abbr",
-    component: () => __vitePreload(() => import("./TestAbbr-Etl4ixf4.js"), true ? __vite__mapDeps([3,4,5,6,7]) : void 0)
-  },
-  {
     title: "home",
     icon: "precision_manufacturing",
-    path: "md-glob",
-    component: () => __vitePreload(() => import("./MDGlob-Qv-ijo79.js"), true ? __vite__mapDeps([8,1,9,10,11,12]) : void 0)
+    path: "/",
+    component: () => __vitePreload(() => import("./MDGlob-Cn0iacrj.js"), true ? __vite__mapDeps([0,1,2,3,4,5]) : void 0)
+  },
+  {
+    title: "Test Abbreviations Plugin",
+    icon: "brush",
+    path: "/test-abbr-plugin",
+    component: () => __vitePreload(() => import("./TestAbbrPlugin-Di_EYxvd.js"), true ? __vite__mapDeps([6,1,7]) : void 0)
+  },
+  {
+    title: "Test Abbreviations Style",
+    icon: "brush",
+    path: "test-abbr-style",
+    component: () => __vitePreload(() => import("./TestAbbrStyle-6puZ_sN_.js"), true ? __vite__mapDeps([8,9,10,11,12]) : void 0)
   },
   {
     title: "MD-Simple",
     icon: "brush",
     path: "md-simple",
-    component: () => __vitePreload(() => import("./MDSimple-BXC8fh4C.js"), true ? __vite__mapDeps([13,12,14,4]) : void 0)
+    component: () => __vitePreload(() => import("./MDSimple-Dlb2wqgy.js"), true ? __vite__mapDeps([13,5,9]) : void 0)
   },
   {
     title: "MD-PluginTest",
     icon: "brush",
     path: "md-plugintest",
-    component: () => __vitePreload(() => import("./MDPluginTest-aDqjPCpz.js"), true ? __vite__mapDeps([15,12,9,14,4]) : void 0)
+    component: () => __vitePreload(() => import("./MDPluginTest-BJi9DFev.js"), true ? __vite__mapDeps([14,5,2]) : void 0)
   },
   {
     title: "Test Global Components",
     icon: "brush",
     path: "test-components",
-    component: () => __vitePreload(() => import("./TestGlobalComponents-BMwwh-Qg.js"), true ? __vite__mapDeps([16,12,17]) : void 0)
+    component: () => __vitePreload(() => import("./TestGlobalComponents-SCae3y1S.js"), true ? __vite__mapDeps([15,5,16]) : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-BculYcvW.js"), true ? __vite__mapDeps([18,11,17,19]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-qdx_q73Q.js"), true ? __vite__mapDeps([17,4,16,18]) : void 0),
     children: [
       // { path: '', component: () => import('pages/Index.vue') },
       // { path: 'about', component: () => import('pages/About.vue') }
@@ -18770,7 +18770,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-cU4q7yJd.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-DKJXeilw.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -20594,17 +20594,17 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-BiJhI1IP.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-DP3rXQkF.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-Bo2y04X1.js"), true ? __vite__mapDeps([20,5,10,11,17,21]) : void 0),
-    __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([22]) : void 0)
+    __vitePreload(() => import("./i18n-CKcD8IRJ.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-Bb1vUC70.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-CftBOR_-.js"), true ? __vite__mapDeps([19,10,3,4,16,20]) : void 0),
+    __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([21]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app, boot2);
   });
 });
 export {
-  onDeactivated as $,
+  vmIsDestroyed as $,
   AddressbarColor as A,
   normalizeProps as B,
   mergeProps as C,
@@ -20615,29 +20615,29 @@ export {
   createBlock as H,
   useQuasar as I,
   withCtx as J,
-  resolveComponent as K,
-  renderList as L,
-  resolveDynamicComponent as M,
-  prevent as N,
-  addEvt as O,
-  nextTick as P,
-  isKeyCode as Q,
-  onBeforeUnmount as R,
-  cleanEvt as S,
+  renderList as K,
+  resolveDynamicComponent as L,
+  prevent as M,
+  addEvt as N,
+  nextTick as O,
+  isKeyCode as P,
+  onBeforeUnmount as Q,
+  cleanEvt as R,
+  listenOpts as S,
   Text as T,
-  listenOpts as U,
-  createComponent as V,
-  injectProp as W,
-  Teleport as X,
-  createGlobalNode as Y,
-  removeGlobalNode as Z,
+  createComponent as U,
+  injectProp as V,
+  Teleport as W,
+  createGlobalNode as X,
+  removeGlobalNode as Y,
+  onDeactivated as Z,
   __vitePreload as _,
   getCurrentInstance as a,
-  vmIsDestroyed as a0,
-  client as a1,
-  Transition as a2,
-  hSlot as a3,
-  stopAndPrevent as a4,
+  client as a0,
+  Transition as a1,
+  hSlot as a2,
+  stopAndPrevent as a3,
+  resolveComponent as a4,
   createStaticVNode as a5,
   watchEffect as a6,
   toRaw as a7,
